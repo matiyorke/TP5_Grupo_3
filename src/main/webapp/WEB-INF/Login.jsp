@@ -12,6 +12,9 @@
 
 <form action="ServletLogin" method="post">
 	<h3>Iniciar sesión</h3>
+		<% if(request.getAttribute("mensaje")!=null) { %>
+		<h4 style="color:red"><%=request.getAttribute("mensaje") %></h4>
+	<% } %>
 	<label for="txtUsuario">Usuario</label><br>
 	<input type="text" id="txtUsuario" name="txtUsuario"/><br><br>
 	<label for="txtContrasenia">Contraseña</label><br>
