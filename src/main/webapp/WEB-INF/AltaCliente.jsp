@@ -11,7 +11,7 @@
 <p>Usuario logueado: <b><%= session.getAttribute("usuarioLogueado") %></b></p>
 
 <p>
-	<a href="ServletClientes">Alta de clientes</a> |
+	<a href="ServletClientes">Alta de clientes</a>
 	<a href="ServletClientes?listar=1">Listado de clientes</a>
 </p>
 
