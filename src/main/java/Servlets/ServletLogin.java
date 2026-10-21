@@ -42,9 +42,7 @@ public class ServletLogin extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("usuarioLogueado", usu.getNombreUsuario());
 
-				// temporal: despues redirigimos al menu de clientes
-				response.setContentType("text/html; charset=UTF-8");
-				response.getWriter().println("Login correcto. Bienvenido " + usu.getNombreUsuario());
+				response.sendRedirect("ServletClientes");
 			} else {
 				request.setAttribute("mensaje", "Usuario o contraseña incorrectos.");
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Login.jsp");
