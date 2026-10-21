@@ -1,1 +1,32 @@
-@charset "UTF-8";
+body {
+	margin: 0;
+	background-color: #f4f6fb;
+	font-family: Arial;
+}
+
+#Cajalogin {
+	background-color: white;
+	width: 300px;
+	margin: 100px auto;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+#Cajalogin input[type="text"],
+#Cajalogin input[type="password"] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px;
+}
+
+#Cajalogin input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	background-color: #2f6bff;
+	color: white;
+	border: none;
+}
+
+.mensajeError {
+	color: red;
+}

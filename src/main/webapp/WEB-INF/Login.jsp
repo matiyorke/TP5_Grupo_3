@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<style type="text/css">
+	<jsp:include page="/css/StyleSheet.css"></jsp:include>
+</style>
+<title>Iniciar sesión</title>
 </head>
 <body>
 
@@ -12,18 +15,23 @@
 
 <form action="ServletLogin" method="post">
 	<h3>Iniciar sesión</h3>
-		<% if(request.getAttribute("mensaje")!=null) { %>
-		<h4 style="color:red"><%=request.getAttribute("mensaje") %></h4>
-	<% } %>
 	<label for="txtUsuario">Usuario</label><br>
-	<input type="text" id="txtUsuario" name="txtUsuario"/><br><br>
+	<input type="text" placeholder="Ingrese usuario" id="txtUsuario" required name="txtUsuario"/><br><br>
 	<label for="txtContrasenia">Contraseña</label><br>
-	<input type="password" id="txtContrasenia" name="txtContrasenia"/><br><br>
+	<input type="password" placeholder="Ingrese contraseña" id="txtContrasenia" required name="txtContrasenia"/><br><br>
 	<input type="submit" name="btnIngresar" value="Ingresar"/>
+
+	<%
+		String mensaje = (String) request.getAttribute("mensaje");
+		if (mensaje != null) {
+	%>
+		<p class="mensajeError"><%= mensaje %></p>
+	<%
+		}
+	%>
 </form>
 
 </div>
 
 </body>
 </html>
-
