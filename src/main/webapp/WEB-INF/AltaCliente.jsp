@@ -12,7 +12,7 @@
 
 <p>
 	<a href="ServletClientes">Alta de clientes</a>
-	<a href="ServletClientes?listar=1">Listado de clientes</a>
+	<a href="ServletListadoClientes">Listado de clientes</a>
 </p>
 
 <h2>Alta de clientes</h2>
