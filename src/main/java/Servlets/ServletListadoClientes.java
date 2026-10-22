@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 import java.util.ArrayList;
@@ -26,6 +27,12 @@ public class ServletListadoClientes extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		if (session.getAttribute("usuarioLogueado") == null) {
+			response.sendRedirect("ServletLogin");
+			return;
+		}
+
 		ArrayList<Clientes> listaClientes = cliNeg.obtenerTodos();
 		
 		request.setAttribute("listaClientes", listaClientes);
